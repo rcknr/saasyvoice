@@ -1,0 +1,8 @@
+<h1>Your Extension</h1>
+
+<p>Your company phone number/extension is <%=h @organization.phone_number.number %> x<%=h @extension.number %></p>
+
+<% form_for(@extension) do |f| %>
+    <%= f.text_field :forward_to %>
+    <%= f.submit 'Update' %>
+<% end %>

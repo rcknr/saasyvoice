@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voice Mail</title>
+  <%= stylesheet_link_tag 'site' %>
+</head>
+<body>
+<!--><section id="page"><-->
+<header>
+    <h1>Saasy Voice</h1>
+    <ul>
+             <% if logged_in?%>
+             <li>Welcome <%= current_user.name %>(<%= current_user.login %>)</li>
+             <li><%= link_to('Log Out', logout_path) %></li>
+             <% else %>
+             <li><%= link_to('Log In', login_path) %></li>
+             <% end %>
+    </ul>
+</header>
+<nav>
+    <ul>
+      <% if logged_in?%>
+        <li><%= link_to('Messages', messages_path())%></li>
+        <li><%= link_to('Directory', users_path())%></li>
+        <li><%= link_to('My Profile', edit_user_path(current_user))%></li>
+      <% else %>
+        <li><%= link_to('Sign Up', signup_path )%></li>
+      <% end %>
+    </ul>
+</nav>
+
+<div id="content">
+  <%= flash[:notice] %>
+  <section id="status">
+  </section>
+  <div id="main_content">
+    <%= yield %>
+  </div>
+</div>
+
+<footer>
+    <div>
+        <section id="about">
+            <header><h3>About</h3></header>
+            <p>This is a demo application written to illustrate integration with Google Apps.  It uses the Google Data APIs for accessing contacts and OpenID for single sign-on.  Voice services are provided by Twilio.</p>
+        </section>
+        <section id="resources">
+            <header><h3>Resources</h3></header>
+            <ul>
+                <li><a href="http://code.google.com/googleapps">Documentation on code.google.com</a></li>
+                <li><a href="http://developer.googleapps.com">Marketplace Program Policies</a></li>
+                <li><a href="http://google.com/a">Sign up for Google Apps</a></li>
+            </ul>
+        </section>
+    </div>
+</footer>
+<!--></section><!-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<section id="new_user">
+  <header>
+      <h3>Update your profile</h3>
+  </header>
+<% @user.password = @user.password_confirmation = nil %>
+
+<% form_for @user do |f| -%>
+  <%= f.text_field :name %>
+  <%= f.text_field :email %>
+  <p><%= f.submit 'Update' %></p>
+<% end -%>
+
+<% form_for :extension do |f| -%>
+<%= f.text_field :forward_to %>
+<p><%= f.submit 'Update' %></p>
+<% end -%>
+
+<% if has_integration? %>
+  <% if has_oauth? %>
+  <p>Your Google Account is linked.</p>
+  <% else %>
+  <p><%= link_to('Link your Google Account', '/oauth_consumers/google') %> to import your contacts.</p>
+  <% end %>
+<% end %>
+</section>

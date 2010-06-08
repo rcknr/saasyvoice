@@ -1,0 +1,225 @@
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-05-31 17:31:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_authentication] rendered_or_redirected.
+Completed in 26ms (DB: 0) | 302 Found [http://localhost/messages]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-31 17:31:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-31 17:31:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-31 17:31:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-31 17:31:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 27ms (View: 15, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#openid_start (for 127.0.0.1 at 2010-05-31 17:31:45) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"openid_start", "authenticity_token"=>"PHfGDOy/BUDTdI29en73wsE2R4x0QwSNcTOw5v2LLBI=", "controller"=>"sessions", "identifier"=>"gmail.com"}
+Performing discovery for gmail.com
+Discovering domain gmail.com
+Cache read: __GAPPS_OPENID__gmail.com
+Cache read: __GAPPS_OPENID__gmail.com
+Cache write: __GAPPS_OPENID__gmail.com
+Retrieving XRDS from https://www.google.com/accounts/o8/id?source=gmail.com
+Cache read: __GAPPS_OPENID__XRDS_https://www.google.com/accounts/o8/id?source=gmail.com
+Cache read: __GAPPS_OPENID__XRDS_https://www.google.com/accounts/o8/id?source=gmail.com
+Cache write: __GAPPS_OPENID__XRDS_https://www.google.com/accounts/o8/id?source=gmail.com
+Cache write: __GAPPS_OPENID__XRDS_https://www.google.com/accounts/o8/id?source=gmail.com
+Discovery info = gmail.com<OpenID::OpenIDServiceEndpoint server_url=https://www.google.com/accounts/o8/ud?source=gmail.com claimed_id= local_id= canonical_id= used_yadis=true>
+Cache read: openid-store:Ahttps://www.google.com/accounts/o8/ud?source=gmail.com
+Cache read: openid-store:Ahttps://www.google.com/accounts/o8/ud?source=gmail.com
+
+NoMethodError (undefined method `expires_in' for #<String:0x253cd3c>):
+  /Users/sbazyl/.gem/ruby/1.8/gems/ruby-openid-2.1.7/lib/openid/consumer/associationmanager.rb:117:in `get_association'
+  /Users/sbazyl/.gem/ruby/1.8/gems/ruby-openid-2.1.7/lib/openid/consumer.rb:243:in `begin_without_discovery'
+  /Users/sbazyl/.gem/ruby/1.8/gems/ruby-openid-2.1.7/lib/openid/consumer.rb:228:in `begin'
+  app/controllers/sessions_controller.rb:58:in `openid_start'
+
+Rendered rescues/_trace (95.0ms)
+Rendered rescues/_request_and_response (4.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#openid_start (for 127.0.0.1 at 2010-05-31 17:34:23) [GET]
+  Parameters: {"action"=>"openid_start", "identifer"=>"gmail.com", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new_openid
+Completed in 37ms (View: 23, DB: 0) | 200 OK [http://localhost/openid/start?identifer=gmail.com]
+
+
+Processing SessionsController#openid_start (for 127.0.0.1 at 2010-05-31 17:34:26) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"openid_start", "authenticity_token"=>"PHfGDOy/BUDTdI29en73wsE2R4x0QwSNcTOw5v2LLBI=", "controller"=>"sessions", "identifier"=>"gmail.com"}
+Performing discovery for gmail.com
+Discovering domain gmail.com
+Cache read: __GAPPS_OPENID__gmail.com
+Cache read: __GAPPS_OPENID__gmail.com
+Retrieving XRDS from https://www.google.com/accounts/o8/id?source=gmail.com
+Cache read: __GAPPS_OPENID__XRDS_https://www.google.com/accounts/o8/id?source=gmail.com
+Cache read: __GAPPS_OPENID__XRDS_https://www.google.com/accounts/o8/id?source=gmail.com
+Discovery info = gmail.com<OpenID::OpenIDServiceEndpoint server_url=https://www.google.com/accounts/o8/ud?source=gmail.com claimed_id= local_id= canonical_id= used_yadis=true>
+Cache read: openid-store:Ahttps://www.google.com/accounts/o8/ud?source=gmail.com
+Cache read: openid-store:Ahttps://www.google.com/accounts/o8/ud?source=gmail.com
+Redirected to https://www.google.com/accounts/o8/ud?source=gmail.com&openid.assoc_handle=AOQobUdryFKY1Y9QN-r-vjHkoEoySye8GMaxCjZb8AdkgKtXqsxI5d_M&openid.ax.mode=fetch_request&openid.ax.required=sn%2Cgn%2Cemail&openid.ax.type.email=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&openid.ax.type.gn=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&openid.ax.type.sn=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.ax=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.realm=http%3A%2F%2Flocalhost%3A3000%2F&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fopenid%2Fcomplete
+Completed in 28ms (DB: 0) | 302 Found [http://localhost/openid/start]
+
+
+Processing SessionsController#openid_complete (for 127.0.0.1 at 2010-05-31 17:34:50) [GET]
+  Parameters: {"openid.mode"=>"id_res", "openid.op_endpoint"=>"https://www.google.com/accounts/o8/ud?source=gmail.com", "openid.return_to"=>"http://localhost:3000/openid/complete", "openid.sig"=>"rr3DUAY2Wq/bNpURb19F/S3K1zU=", "openid.ext1.value.email"=>"sqrrrl@gmail.com", "openid.response_nonce"=>"2010-06-01T00:34:50Zrag1_cQXO7n8ZA", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"openid_complete", "openid.ext1.mode"=>"fetch_response", "openid.ext1.value.sn"=>"Bazyl", "openid.identity"=>"https://www.google.com/accounts/o8/id?id=AItOawlfbvliM9E8SLvMpHw9o1Tk2usoN1uQxy8", "openid.ext1.value.gn"=>"Steven", "openid.assoc_handle"=>"AOQobUdryFKY1Y9QN-r-vjHkoEoySye8GMaxCjZb8AdkgKtXqsxI5d_M", "openid.signed"=>"op_endpoint,claimed_id,identity,return_to,response_nonce,assoc_handle,ns.ext1,ext1.mode,ext1.type.gn,ext1.value.gn,ext1.type.email,ext1.value.email,ext1.type.sn,ext1.value.sn", "openid.ns.ext1"=>"http://openid.net/srv/ax/1.0", "openid.ext1.type.email"=>"http://axschema.org/contact/email", "controller"=>"sessions", "openid.ext1.type.sn"=>"http://axschema.org/namePerson/last", "openid.claimed_id"=>"https://www.google.com/accounts/o8/id?id=AItOawlfbvliM9E8SLvMpHw9o1Tk2usoN1uQxy8", "openid.ext1.type.gn"=>"http://axschema.org/namePerson/first"}
+Performing discovery for https://www.google.com/accounts/o8/id?id=AItOawlfbvliM9E8SLvMpHw9o1Tk2usoN1uQxy8
+Discovering user identity https://www.google.com/accounts/o8/id?id=AItOawlfbvliM9E8SLvMpHw9o1Tk2usoN1uQxy8 for domain www.google.com
+Cache read: __GAPPS_OPENID__www.google.com
+Cache read: __GAPPS_OPENID__www.google.com
+Received 400 when fetching https://www.google.com/accounts/o8/.well-known/host-meta?hd=www.google.com
+www.google.com is not a Google Apps domain, aborting
+Cache read: openid-store:Ahttps://www.google.com/accounts/o8/ud?source=gmail.com|AOQobUdryFKY1Y9QN-r-vjHkoEoySye8GMaxCjZb8AdkgKtXqsxI5d_M
+Cache read: openid-store:Ahttps://www.google.com/accounts/o8/ud?source=gmail.com|AOQobUdryFKY1Y9QN-r-vjHkoEoySye8GMaxCjZb8AdkgKtXqsxI5d_M
+Cache read: openid-store:Nhttps://www.google.com/accounts/o8/ud?source=gmail.com|1275352490|rag1_cQXO7n8ZA
+Cache read: openid-store:Nhttps://www.google.com/accounts/o8/ud?source=gmail.com|1275352490|rag1_cQXO7n8ZA
+Cache write: openid-store:Nhttps://www.google.com/accounts/o8/ud?source=gmail.com|1275352490|rag1_cQXO7n8ZA ({:expires_in=>18005})
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."openid" = 'https://www.google.com/accounts/o8/id?id=AItOawlfbvliM9E8SLvMpHw9o1Tk2usoN1uQxy8') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'sqrrrl@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.8ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "created_at", "activated_at", "crypted_password", "remember_token_expires_at", "updated_at", "activation_code", "remember_token", "login", "organization_id", "openid", "email") VALUES('Steven Bazyl', '11517d249dc60c6aa7b551aa3013504c6a0d5d55', '2010-06-01 00:34:50', NULL, 'dc18d3b87f9e5eab714fc36151b080e8870420a0', NULL, '2010-06-01 00:34:50', '624ca3648c5c9f5be4e503bf07888aa3b67cc212', NULL, 'sqrrrl@gmail.com', NULL, 'https://www.google.com/accounts/o8/id?id=AItOawlfbvliM9E8SLvMpHw9o1Tk2usoN1uQxy8', 'sqrrrl@gmail.com')[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-06-01 00:34:50', "activated_at" = '2010-06-01 00:34:50', "activation_code" = NULL WHERE "id" = 1[0m
+  [4;36;1mGoogleToken Load (0.3ms)[0m   [0;1mSELECT * FROM "consumer_tokens" WHERE ("consumer_tokens".user_id = 1) AND ( ("consumer_tokens"."type" = 'GoogleToken' ) ) LIMIT 1[0m
+Redirected to http://localhost:3000/messages
+Completed in 528ms (DB: 2) | 302 Found [http://localhost/openid/complete?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.mode=id_res&openid.op_endpoint=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fud%3Fsource%3Dgmail.com&openid.response_nonce=2010-06-01T00%3A34%3A50Zrag1_cQXO7n8ZA&openid.return_to=http%3A%2F%2Flocalhost%3A3000%2Fopenid%2Fcomplete&openid.assoc_handle=AOQobUdryFKY1Y9QN-r-vjHkoEoySye8GMaxCjZb8AdkgKtXqsxI5d_M&openid.signed=op_endpoint%2Cclaimed_id%2Cidentity%2Creturn_to%2Cresponse_nonce%2Cassoc_handle%2Cns.ext1%2Cext1.mode%2Cext1.type.gn%2Cext1.value.gn%2Cext1.type.email%2Cext1.value.email%2Cext1.type.sn%2Cext1.value.sn&openid.sig=rr3DUAY2Wq%2FbNpURb19F%2FS3K1zU%3D&openid.identity=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid%3Fid%3DAItOawlfbvliM9E8SLvMpHw9o1Tk2usoN1uQxy8&openid.claimed_id=https%3A%2F%2Fwww.google.com%2Faccounts%2Fo8%2Fid%3Fid%3DAItOawlfbvliM9E8SLvMpHw9o1Tk2usoN1uQxy8&openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&openid.ext1.mode=fetch_response&openid.ext1.type.gn=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&openid.ext1.value.gn=Steven&openid.ext1.type.email=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&openid.ext1.value.email=sqrrrl%40gmail.com&openid.ext1.type.sn=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&openid.ext1.value.sn=Bazyl]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-05-31 17:34:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mOrganization Load (0.6ms)[0m   [0;1mSELECT * FROM "organizations" WHERE ("organizations"."domain" = 'gmail.com') LIMIT 1[0m
+  [4;35;1mInvitation Load (0.3ms)[0m   [0mSELECT * FROM "invitations" WHERE ("invitations"."email" = 'sqrrrl@gmail.com') LIMIT 1[0m
+Redirected to http://localhost:3000/organizations/new
+Filter chain halted as [:ensure_setup] rendered_or_redirected.
+Completed in 24ms (DB: 3) | 302 Found [http://localhost/messages]
+
+
+Processing OrganizationsController#new (for 127.0.0.1 at 2010-05-31 17:34:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"organizations"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering organizations/new
+Completed in 41ms (View: 21, DB: 1) | 200 OK [http://localhost/organizations/new]
+
+
+Processing OrganizationsController#create (for 127.0.0.1 at 2010-05-31 17:35:12) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"PHfGDOy/BUDTdI29en73wsE2R4x0QwSNcTOw5v2LLBI=", "controller"=>"organizations", "organization"=>{"name"=>"test Domain", "domain"=>""}}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'sqrrrl@gmail.com' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mOrganization Create (0.5ms)[0m   [0mINSERT INTO "organizations" ("name", "from_marketplace", "created_at", "updated_at", "domain", "enabled") VALUES('test Domain', NULL, '2010-06-01 00:35:12', '2010-06-01 00:35:12', '', NULL)[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-06-01 00:35:12', "organization_id" = 1 WHERE "id" = 1[0m
+  [4;35;1mPhoneNumber Create (0.3ms)[0m   [0mINSERT INTO "phone_numbers" ("number", "created_at", "updated_at", "organization_id") VALUES('+18776601798', '2010-06-01 00:35:12', '2010-06-01 00:35:12', 1)[0m
+Redirected to http://localhost:3000/organizations/1
+Completed in 40ms (DB: 3) | 302 Found [http://localhost/organizations]
+
+
+Processing OrganizationsController#show (for 127.0.0.1 at 2010-05-31 17:35:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"organizations"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mOrganization Load (0.8ms)[0m   [0mSELECT * FROM "organizations" WHERE ("organizations"."id" = 1) [0m
+  [4;36;1mExtension Load (0.3ms)[0m   [0;1mSELECT * FROM "extensions" WHERE ("extensions".user_id = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/extensions/new
+Filter chain halted as [:ensure_setup] rendered_or_redirected.
+Completed in 14ms (DB: 3) | 302 Found [http://localhost/organizations/1]
+
+
+Processing ExtensionsController#new (for 127.0.0.1 at 2010-05-31 17:35:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"extensions"}
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mExtension Load (1.0ms)[0m   [0;1mSELECT * FROM "extensions" WHERE ("extensions".user_id = 1) LIMIT 1[0m
+  [4;35;1mOrganization Load (0.9ms)[0m   [0mSELECT * FROM "organizations" WHERE ("organizations"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering extensions/new
+  [4;36;1mPhoneNumber Load (0.9ms)[0m   [0;1mSELECT * FROM "phone_numbers" WHERE ("phone_numbers".organization_id = 1) LIMIT 1[0m
+Completed in 87ms (View: 57, DB: 4) | 200 OK [http://localhost/extensions/new]
+
+
+Processing ExtensionsController#create (for 127.0.0.1 at 2010-05-31 17:35:14) [POST]
+  Parameters: {"commit"=>"Give me my extension!", "extension"=>{"forward_to"=>""}, "action"=>"create", "authenticity_token"=>"PHfGDOy/BUDTdI29en73wsE2R4x0QwSNcTOw5v2LLBI=", "controller"=>"extensions"}
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mExtension Load (0.3ms)[0m   [0;1mSELECT * FROM "extensions" WHERE ("extensions".user_id = 1) LIMIT 1[0m
+  [4;35;1mOrganization Load (0.8ms)[0m   [0mSELECT * FROM "organizations" WHERE ("organizations"."id" = 1) [0m
+  [4;36;1mPhoneNumber Load (0.8ms)[0m   [0;1mSELECT * FROM "phone_numbers" WHERE ("phone_numbers".organization_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT max("extensions".number) AS max_number FROM "extensions" WHERE (phone_number_id = 1) [0m
+  [4;36;1mExtension Load (0.3ms)[0m   [0;1mSELECT "extensions".id FROM "extensions" WHERE ("extensions"."number" = '1' AND "extensions".phone_number_id = 1) LIMIT 1[0m
+  [4;35;1mExtension Create (0.9ms)[0m   [0mINSERT INTO "extensions" ("number", "phone_number_id", "forward_to", "created_at", "updated_at", "user_id") VALUES(1, 1, '', '2010-06-01 00:35:14', '2010-06-01 00:35:14', 1)[0m
+Redirected to http://localhost:3000/messages
+Completed in 61ms (DB: 5) | 302 Found [http://localhost/extensions]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-05-31 17:35:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mOrganization Load (0.8ms)[0m   [0mSELECT * FROM "organizations" WHERE ("organizations"."id" = 1) [0m
+  [4;36;1mExtension Load (1.0ms)[0m   [0;1mSELECT * FROM "extensions" WHERE ("extensions".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;35;1mPhoneNumber Load (0.8ms)[0m   [0mSELECT * FROM "phone_numbers" WHERE ("phone_numbers"."id" = 1) [0m
+  [4;36;1mGoogleToken Load (0.4ms)[0m   [0;1mSELECT * FROM "consumer_tokens" WHERE ("consumer_tokens".user_id = 1) AND ( ("consumer_tokens"."type" = 'GoogleToken' ) ) LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "messages" WHERE ("messages".extension_id = 1) [0m
+Completed in 58ms (View: 30, DB: 5) | 200 OK [http://localhost/messages]
+
+
+Processing OauthConsumersController#show (for 127.0.0.1 at 2010-05-31 17:35:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"google", "controller"=>"oauth_consumers"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGoogleToken Load (0.3ms)[0m   [0mSELECT * FROM "consumer_tokens" WHERE ("consumer_tokens"."user_id" = 1) AND ( ("consumer_tokens"."type" = 'GoogleToken' ) ) LIMIT 1[0m
+Redirected to https://www.google.com/accounts/OAuthAuthorizeToken?oauth_token=4%2FTDZPm-LgIs7dyGsbf2Q5dOaInpY7
+Completed in 346ms (DB: 2) | 302 Found [http://localhost/oauth_consumers/google]
+
+
+Processing OauthConsumersController#callback (for 127.0.0.1 at 2010-05-31 17:35:31) [GET]
+  Parameters: {"action"=>"callback", "id"=>"google", "controller"=>"oauth_consumers", "oauth_verifier"=>"gKg8XMgjkLCK+sG16n/lDSEs", "oauth_token"=>"4/TDZPm-LgIs7dyGsbf2Q5dOaInpY7"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mGoogleToken Load (0.3ms)[0m   [0mSELECT * FROM "consumer_tokens" WHERE ("consumer_tokens"."user_id" = 1) AND ( ("consumer_tokens"."type" = 'GoogleToken' ) ) LIMIT 1[0m
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mGoogleToken Create (0.7ms)[0m   [0mINSERT INTO "consumer_tokens" ("created_at", "token", "updated_at", "user_id", "type", "secret") VALUES('2010-06-01 00:35:33', '1/9y_OQgD-UOEIF0lvukORqaj131jKdk-bfu8Ly3AC3WU', '2010-06-01 00:35:33', 1, 'GoogleToken', 'yN2GAbrO7/+CtB3PhZQgu52P')[0m
+Redirected to http://localhost:3000/
+Completed in 2309ms (DB: 4) | 302 Found [http://localhost/oauth_consumers/google/callback?oauth_verifier=gKg8XMgjkLCK%2BsG16n%2FlDSEs&oauth_token=4%2FTDZPm-LgIs7dyGsbf2Q5dOaInpY7]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-05-31 17:35:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mOrganization Load (1.2ms)[0m   [0mSELECT * FROM "organizations" WHERE ("organizations"."id" = 1) [0m
+  [4;36;1mExtension Load (0.8ms)[0m   [0;1mSELECT * FROM "extensions" WHERE ("extensions".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 29ms (View: 6, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing MessagesController#index (for 127.0.0.1 at 2010-05-31 17:35:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"messages"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mOrganization Load (0.8ms)[0m   [0;1mSELECT * FROM "organizations" WHERE ("organizations"."id" = 1) [0m
+  [4;35;1mExtension Load (0.8ms)[0m   [0mSELECT * FROM "extensions" WHERE ("extensions".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering messages/index
+  [4;36;1mPhoneNumber Load (0.7ms)[0m   [0;1mSELECT * FROM "phone_numbers" WHERE ("phone_numbers"."id" = 1) [0m
+  [4;35;1mGoogleToken Load (1.6ms)[0m   [0mSELECT * FROM "consumer_tokens" WHERE ("consumer_tokens".user_id = 1) AND ( ("consumer_tokens"."type" = 'GoogleToken' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "messages" WHERE ("messages".extension_id = 1) [0m
+Completed in 26ms (View: 13, DB: 6) | 200 OK [http://localhost/messages]

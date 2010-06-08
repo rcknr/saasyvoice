@@ -1,0 +1,292 @@
+{
+    margin: 0;
+    padding: 0;
+}
+
+header, footer, aside, nav, article {
+    display: block;
+}
+
+html {
+    height: 100%;
+    color: #3F4C6B;
+    
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    margin: 0 auto;
+    width: 940px;
+    font: 13px/22px Helvetica, Arial, sans-serif;
+    background: #FFFFFF;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 44px;
+    padding: 22px 0;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 11px 0;
+}
+
+p {
+    padding-bottom: 10px;
+}
+
+header h1 {
+    display: inline-block;
+    padding-left: 10px;
+    color: #3F4C6B;
+}
+
+header ul {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    margin: 0px auto;
+    list-style: none;
+}
+
+header ul li {
+    float: left; 
+    margin-right: 20px;
+    font-size: 14px;
+    text-align: right;
+    text-decoration: none;
+}
+
+nav {
+    height: 44px;
+    left: 0;
+    width: 100%;
+    background: #356AA0;
+}
+
+nav ul {
+    margin: 0 auto;
+    width: 940px;
+    list-style: none;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    margin-right: 20px;
+    width: 140px;
+    font-size: 14px;
+    line-height: 44px;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+nav ul li a:hover {
+    color: #FFFFFF;
+}
+
+nav ul li.slected a {
+    color: #FFFFFF;
+}
+
+table {
+    display: table;
+    width: 100%;
+    text-align: center;
+    border: 1px solid;
+    border-spacing: 0;
+}
+ 
+thead {
+    background: #356AA0;
+    color: #FFFFFF;
+    font-size: 110%;
+    font-weight: bold;
+    font-style: italic
+}
+ 
+ 
+tbody tr:nth-child(odd) {
+    background: #EEEEEE;
+}
+ 
+tbody tr:nth-child(even) {
+}
+
+div.contact {
+        display:inline-block;
+        vertical-align: top;
+}
+
+div.contact_details {
+    padding-right: 5px;
+    float:left;
+}
+div.contact_details span {
+        display:block;
+}
+
+#content {
+    width: 100%;
+    padding: 0 10px 200px 10px;
+    min-height: 100%;
+    display: table;
+}
+
+#status {
+    display: table-row;
+    width: 100%;
+}
+
+#main_content {
+    display: table-row;
+    height: 100%;
+    width: 100%;
+}
+
+#intro {
+    display: table-row;
+}
+
+#benefits {
+    display: table;
+    margin: 0;
+    padding: 0;
+    xmargin: 0 auto;
+    xmargin-bottom: 20px;
+    width: 940px;
+    list-style: none;
+}
+
+#benefits li {
+    display: table-cell;
+    margin-right: 20px;
+    padding-right: 20px;
+    width: 80px;
+    height: 100px;
+}
+
+#benefits li span {
+    display: block;
+    height: 100%;
+    background-color: #EEEEEE;
+    color: #000000;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    padding: 20px 20px 20px 20px;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#benefits li a {
+    color: #000000;
+}
+
+#benefits li a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+form {
+#    margin-top: 21px;
+#    padding-top: 22px;
+}
+
+form p {
+    display: table;
+    margin-bottom: 22px;
+    padding: 0 22px;
+}
+
+form label {
+    display: table-cell;
+    width: 140px;
+    padding-right: 20px;
+    text-align: right;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+form input[type="text"], form input[type="email"], form input[type="password"], form input[type="url"] {
+    display: table-cell;
+    width: 300px;
+    height: 20px;
+    border: 1px solid #d7d7d7;
+}
+
+form span.error {
+    margin-left: 10px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+form input[type="submit"] {
+    margin-left: 162px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: #356AA0;
+}
+
+footer div {
+  display: table;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 940px;
+  color: #FFFFFF;
+}
+
+footer div section {
+    display: table-cell;
+    width: 300px;
+}
+
+footer div #about {
+    padding-right: 20px;
+}
+footer a {
+    color: #FFFFFF;
+}
+
+footer a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+footer ul {
+    margin: 00 0 40px;
+    list-style: square;
+    color: #FFFFFF;
+}
+
+footer ul li a {
+    display:block;
+}
+
+#message_list {
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    text-decoration: none;
+}
+
+#message_list li {
+    padding: 10px;
+}
+#message_list span {
+    display: block;
+}

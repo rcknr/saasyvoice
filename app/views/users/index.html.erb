@@ -1,0 +1,24 @@
+<section id="new_user">
+  <header>
+      <h3>Users in <%= @organization.name %></h3>
+  </header>
+<table id="user_list">
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Extension</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%=h user.name %></td>
+      <td><%= mail_to(user.email) %></td>
+      <td><%=h user.extension.number unless user.extension.nil? %></td>
+    </tr>
+    <% end %>
+  <tbody>
+</table>
+
+<%= link_to 'Invite a user', new_invitation_path %>
+
+</h3>

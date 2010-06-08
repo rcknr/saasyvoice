@@ -1,0 +1,16 @@
+<h1>Almost done!</h1>
+
+<p>Your company phone number is <%=h format_phone(@organization.phone_number.number) %></p>
+<p>
+    You'll be ready to receive messages in just a moment.  If you'd like to forward calls
+    to a number, please enter it now.
+</p>
+
+<% form_for(@extension) do |f| %>
+  <%= f.error_messages %>
+
+    <%= f.text_field :forward_to %>
+  <p>
+    <%= f.submit 'Give me my extension!' %>
+  </p>
+<% end %>

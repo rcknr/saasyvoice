@@ -1,0 +1,14 @@
+Starting point:
+
+rails
+restful-authentication
+
+
+Oauth
+-----
+sudo gem install oauth-plugin
+./script/generate oauth_consumer
+
+Edit initializers/oauth_consumers.rb
+
+Edit user.rb to add has_one - token

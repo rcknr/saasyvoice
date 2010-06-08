@@ -1,0 +1,24 @@
+<section id="new_user">
+  <header>
+    <h3>Sign up</h3>
+  </header>
+  <% if has_integration? %>
+  <p>Enter your email address or domain to sign up with OpenID</p>
+    <% form_tag openid_start_path do -%>
+    <p><%= label_tag 'identifier', 'E-mail or domain' %>
+    <%= text_field_tag 'identifier', nil %></p>
+    <p><%= submit_tag 'Sign up with OpenID' %></p>
+    <% end -%>
+    <p>Or just fill in the form below to sign up for a new account.</p>
+  <% end %>
+  
+<% @user.password = @user.password_confirmation = nil %>
+
+<% form_for :user, :url => users_path do |f| -%>
+<%= f.text_field :name %>
+<%= f.text_field :email %>
+<%= f.password_field :password %>
+<%= f.password_field :password_confirmation, :label => 'Confirm Password' %>
+<p><%= f.submit 'Sign up' %></p>
+<% end -%>
+</section>

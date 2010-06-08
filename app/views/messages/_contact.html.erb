@@ -1,0 +1,15 @@
+<% if contact.present? %>
+<div class="contact">
+  <span class="contact_name"><%= contact.name %></span>
+  <div class="contact_details">
+    <% contact.phones.each do |p| %>
+    <span class="contact_phone">Phone (<%=h p.rel %>): <%=h format_phone(p.value) %></span>
+    <% end %>
+  </div>
+  <div class="contact_details">
+    <% contact.emails.each do |e| %>
+    <span class="contact_email">Email (<%=h e.rel %>): <%= mail_to(e.value) %></span>
+    <% end %>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @organization.name %>
+</p>
+
+<p>
+  <b>Domain:</b>
+  <%=h @organization.domain %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @organization.phone_number.number %>
+</p>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>

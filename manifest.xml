@@ -1,0 +1,41 @@
+<ApplicationManifest xmlns="http://schemas.google.com/ApplicationManifest/2009">
+
+  <!-- Support info to show in the marketplace & control panel -->
+  <Support>
+  <Link rel="setup" href="http://saasyvoice.heroku.com/openid/start?marketplace=1&amp;identifier=${DOMAIN_NAME}" />
+  <Link rel="deletion-policy" href="http://saasyvoice.heroku.com/delete" />
+  <Link rel="support" href="http://saasyvoice.heroku.com/support" />
+  </Support>
+
+  <!-- Name and description pulled from message bundles -->
+  <Name>SaaSy Voice</Name>
+  <Description>SaaSy Voice</Description>
+
+  <!-- Show this link in the one google bar for all users -->
+  <Extension id="oneBarLink" type="link">
+    <Name>Voicemail</Name>
+    <Url>http://saasyvoice.heroku.com/openid/start?marketplace=1&amp;identifier=${DOMAIN_NAME}</Url>
+    <Scope ref="provisioningFeed"/>
+    <Scope ref="contactsFeed"/>
+    <Scope ref="docsFeed"/>
+  </Extension>
+
+  <!-- Declare our OpenID realm so our app is white listed -->
+  <Extension id="realm" type="openIdRealm">
+    <Url>http://saasyvoice.heroku.com/</Url>
+  </Extension>
+
+  <!-- Request access to appropriate data sources -->
+  <Scope id="provisioningFeed">
+    <Url>https://apps-apis.google.com/a/feeds/user/#readonly</Url>
+    <Reason>To get a list of users to provision accounts</Reason>
+  </Scope>
+  <Scope id="contactsFeed">
+    <Url>https://www.google.com/m8/feeds/</Url>
+    <Reason>To display names of people who called</Reason>
+  </Scope>
+  <Scope id="docsFeed">
+    <Url>https://docs.google.com/feeds/</Url>
+    <Reason>To export a call log</Reason>
+  </Scope>
+</ApplicationManifest>

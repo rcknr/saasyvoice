@@ -1,0 +1,7 @@
+<h1>Editing organization</h1>
+
+<% form_for(@organization) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :domain %>
+  <%= f.submit 'Update' %>
+<% end %>

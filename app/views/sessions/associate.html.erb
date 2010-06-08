@@ -1,0 +1,13 @@
+<section id="login">
+  <header>
+      <h3>Associate your account.</h3>
+  </header>
+<p>Please enter your password to link your account.</p>
+
+<% form_tag associate_path do -%>
+<p><%= label_tag 'password' %>
+<%= password_field_tag 'password', nil %></p>
+
+<p><%= submit_tag 'Link' %></p>
+<% end -%>
+</section>

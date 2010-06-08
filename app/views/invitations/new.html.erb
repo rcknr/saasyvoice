@@ -1,0 +1,19 @@
+<h1>Invite a user</h1>
+
+<p>Your company phone number is <%=h @organization.phone_number.number %></p>
+<p>
+  To allow a user to create an extension for your company, enter the email address of the
+  user you'd like to invite.
+</p>
+
+<% form_for(@invitation) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit 'Invite user' %>
+  </p>
+<% end %>

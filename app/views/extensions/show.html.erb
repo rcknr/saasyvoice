@@ -1,0 +1,22 @@
+<p>
+  <b>Company:</b>
+  <%=h @organization.name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @organization.phone_number.number %>
+</p>
+
+<p>
+  <b>Extension:</b>
+  <%=h @extension.number %>
+</p>
+
+<p>
+  <b>Forward to:</b>
+  <%=h @extension.forward_to %>
+</p>
+
+
+<%= link_to 'Edit', edit_extension_path(@extension) %> |

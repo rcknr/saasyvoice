@@ -1,0 +1,28 @@
+<section id="messages">
+   <header>
+     <h3>Messages for <%=h @user.name %>, <%=h format_phone(@user.extension.phone_number.number) %> x<%=h @user.extension.number%></h3>
+   </header>
+   <% if has_integration? %>
+     <% unless has_oauth? %>
+     <p><%= link_to('Link your Google Account', '/oauth_consumers/google') %> to import your contacts.</p>
+     <% end %>
+   <% end %>
+   <% if @messages.empty? %>
+   <p>You have no messages.</p>
+   <% end %>
+   <ul id="message_list">
+   <% @messages.each do |message| %>
+     <li class="message">
+      <span class="call_from">Call from <%=h format_phone(message.from) %></span>
+      <audio controls="controls">
+          <source src="<%= message.url %>.mp3"/>
+      </audio>
+      <span class="receved">Received at <%=h message.created_at %></span>
+      <% if has_integration? %>
+        <%= render :partial => 'contact', :locals => { :contact => @user.contact_by_phone(message.from) }%>
+      <% end %>
+      </li>
+   <% end %>
+  </ul>
+
+</section>

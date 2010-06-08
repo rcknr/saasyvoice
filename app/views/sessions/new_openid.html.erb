@@ -1,0 +1,12 @@
+<section id="login_openid">
+  <header>
+      <h3>Log in</h3>
+  </header>
+<% form_tag openid_start_path do -%>
+<p>Enter your email address or domain to log in with OpenID</p>
+<p><%= label_tag 'identifier', 'E-mail or domain' %>
+<%= text_field_tag 'identifier', nil %></p>
+
+<p><%= submit_tag 'Log in' %></p>
+<% end -%>
+</section>

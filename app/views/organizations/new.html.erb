@@ -1,0 +1,16 @@
+<section id="new_user">
+  <header>
+      <h3>Welcome!</h3>
+  </header>
+  
+<p>
+    To complete your setup, please tell us a little more about your organization.
+</p>
+
+<% form_for(@organization) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :domain, :label=>'Automatically accept users from domain' %>
+  <%= f.submit 'Sign up' %>
+<% end %>
+
+</section>

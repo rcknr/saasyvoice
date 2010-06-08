@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  extension_number: MyString
+  phone_number: 
+  user: 
+  message: 
+
+two:
+  extension_number: MyString
+  phone_number: 
+  user: 
+  message: 
